@@ -10,7 +10,7 @@ $message = $_GET['message'];
         $users = json_decode(file_get_contents(__DIR__ . "/users.json"), true);
         $input_password = $users[$login];
 
-        if ($input_password === $password)
+         if ($input_password === $password && $input_password === $login )
         {
             $json_message =
                 [
@@ -22,7 +22,7 @@ $message = $_GET['message'];
         }
         else
         {
-            echo("Пользователь не найден");
+            echo("Ошибка ввода логина или пароля");
         }
 
     }
